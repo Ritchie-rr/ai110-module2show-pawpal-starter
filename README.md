@@ -41,3 +41,26 @@ pip install -r requirements.txt
 5. Add tests to verify key behaviors.
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
+
+## Smarter Scheduling Features
+
+PawPal+ includes several advanced scheduling capabilities:
+
+**Recurring Task Management**
+- Tasks support frequency levels: daily, weekly, monthly, as_needed
+- Automatic `next_due_date` calculation using Python's `timedelta` — when a task is marked complete, the scheduler calculates when it will be due again
+- Intelligent filtering with `get_due_tasks()` — only schedules tasks that are actually due today
+
+**Time-Aware Scheduling**
+- Sort tasks chronologically by `scheduled_time` (HH:MM format) using a readable key function
+- Detect exact time conflicts — warns if multiple tasks are scheduled at the same time across all pets
+- Prevent double-booking with `detect_time_conflicts()`
+
+**Intelligent Prioritization**
+- Greedy scheduling algorithm: high-priority tasks fit first; low-priority tasks may be dropped if time is tight
+- Priority filtering with `filter_by_priority()` — view all high/medium/low priority tasks at a glance
+- Clear reasoning for scheduling decisions — each plan includes explanations for why tasks were selected or rejected
+
+**Conflict Detection** (lightweight, non-crashing)
+- Duration conflicts: warns when total scheduled time exceeds owner's available time
+- Time conflicts: warns when two tasks are scheduled for the exact same time (works across all pets)
