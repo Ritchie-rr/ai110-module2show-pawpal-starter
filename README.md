@@ -64,3 +64,11 @@ PawPal+ includes several advanced scheduling capabilities:
 **Conflict Detection** (lightweight, non-crashing)
 - Duration conflicts: warns when total scheduled time exceeds owner's available time
 - Time conflicts: warns when two tasks are scheduled for the exact same time (works across all pets)
+
+## Demo
+
+<a href="/course_images/ai110/pawpal_screenshot.png" target="_blank"><img src="/course_images/ai110/pawpal_screenshot.png"></a>
+
+<a href="/course_images/ai110/image-1.png" target="_blank"><img src="/course_images/ai110/image-1.png"></a>
+
+
